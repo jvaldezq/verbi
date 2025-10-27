@@ -1,7 +1,7 @@
 import { existsSync } from 'fs';
 import { resolve } from 'path';
 import { pathToFileURL } from 'url';
-import { VerbiConfigSchema, type VerbiConfig } from './schema.js';
+import { validateConfig, type VerbiConfig } from './schema.js';
 import { VerbiError } from '../utils/errors.js';
 
 const CONFIG_FILES = [
@@ -25,8 +25,8 @@ export async function loadConfig(cwd: string = process.cwd()): Promise<VerbiConf
     const configModule = await import(pathToFileURL(configPath).href);
     const rawConfig = configModule.default || configModule;
 
-    // Validate with Zod
-    const config = VerbiConfigSchema.parse(rawConfig);
+    // Validate config
+    const config = validateConfig(rawConfig);
 
     return config;
   } catch (error) {

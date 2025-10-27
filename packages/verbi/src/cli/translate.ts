@@ -69,11 +69,9 @@ async function loadProvider(providerConfig: any) {
     return providers.openai(providerConfig.config);
   } else if (providerConfig.name === 'anthropic') {
     return providers.anthropic(providerConfig.config);
-  } else if (providerConfig.name === 'deepl') {
-    return providers.deepl(providerConfig.config);
   } else if (providerConfig.name === 'router') {
     return providers.router(providerConfig.config);
   }
 
-  throw new Error(`Unknown provider: ${providerConfig.name}`);
+  throw new Error(`Unknown provider: ${providerConfig.name}. Supported providers: openai, anthropic, router`);
 }

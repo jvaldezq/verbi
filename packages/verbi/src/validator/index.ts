@@ -100,7 +100,7 @@ export async function validateTranslations(
     }
 
     // Check glossary terms
-    if (config.glossary.length > 0) {
+    if (config.glossary && config.glossary.length > 0) {
       for (const term of config.glossary) {
         if (term.keep && sourceText.includes(term.term) && !targetText.includes(term.term)) {
           errors.push({

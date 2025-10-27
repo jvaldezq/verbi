@@ -1,69 +1,87 @@
-import { z } from 'zod';
+// Type definitions for Verbi configuration
+export type Locale = string;
 
-export const LocaleSchema = z.enum([
-  'en', 'en-US', 'en-GB',
-  'es', 'es-ES', 'es-CR', 'es-MX',
-  'fr', 'fr-FR', 'fr-CA',
-  'de', 'de-DE', 'de-AT',
-  'it', 'it-IT',
-  'pt', 'pt-BR', 'pt-PT',
-  'nl', 'nl-NL', 'nl-BE',
-  'ja', 'ja-JP',
-  'ko', 'ko-KR',
-  'zh', 'zh-CN', 'zh-TW',
-  'ar', 'ar-SA',
-  'ru', 'ru-RU',
-  'pl', 'pl-PL',
-  'tr', 'tr-TR',
-  'sv', 'sv-SE',
-  'da', 'da-DK',
-  'fi', 'fi-FI',
-  'no', 'no-NO',
-  'cs', 'cs-CZ',
-  'el', 'el-GR',
-  'he', 'he-IL',
-  'th', 'th-TH',
-  'vi', 'vi-VN',
-  'id', 'id-ID',
-  'hi', 'hi-IN',
-]).or(z.string()); // Allow custom locales
+export interface GlossaryTerm {
+  term: string;
+  keep?: boolean;
+  translation?: Record<string, string>;
+}
 
-export const GlossaryTermSchema = z.object({
-  term: z.string(),
-  keep: z.boolean().default(true),
-  translation: z.record(LocaleSchema, z.string()).optional(),
-});
+export interface ProviderConfig {
+  name: 'openai' | 'anthropic';
+  config: Record<string, any>;
+}
 
-export const ProviderConfigSchema = z.object({
-  name: z.string(),
-  config: z.record(z.unknown()),
-});
+export interface CacheConfig {
+  enabled?: boolean;
+  ttl?: number;
+  kind?: 'file' | 'memory';
+  path?: string;
+}
 
-export const CacheConfigSchema = z.object({
-  kind: z.enum(['file', 'memory']),
-  path: z.string().optional(),
-});
+export interface ValidationConfig {
+  icu?: boolean;
+  placeholders?: boolean;
+  maxParaphraseDelta?: number;
+  failOnMissing?: boolean;
+}
 
-export const ValidationConfigSchema = z.object({
-  icu: z.boolean().default(true),
-  placeholders: z.boolean().default(true),
-  maxParaphraseDelta: z.number().min(0).max(1).default(0.15),
-  failOnMissing: z.boolean().default(false),
-});
+export interface VerbiConfig {
+  sourceLocale: string;
+  locales: string[];
+  messagesDir?: string;
+  include?: string[];
+  exclude?: string[];
+  provider: ProviderConfig;
+  glossary?: GlossaryTerm[];
+  cache?: CacheConfig;
+  validate?: ValidationConfig;
+  namespaceStrategy?: 'file' | 'directory' | 'flat';
+}
 
-export const VerbiConfigSchema = z.object({
-  sourceLocale: LocaleSchema.default('en-US'),
-  locales: z.array(LocaleSchema),
-  messagesDir: z.string().default('./messages'),
-  include: z.array(z.string()).default(['src/**/*.{ts,tsx,js,jsx}']),
-  exclude: z.array(z.string()).default(['**/*.test.*', '**/*.spec.*', '**/node_modules/**']),
-  provider: ProviderConfigSchema,
-  glossary: z.array(GlossaryTermSchema).default([]),
-  cache: CacheConfigSchema.default({ kind: 'file', path: '.verbi-cache' }),
-  validate: ValidationConfigSchema.default({}),
-  namespaceStrategy: z.enum(['file', 'directory', 'flat']).default('directory'),
-});
+// Lightweight validation helper
+export function validateConfig(config: any): VerbiConfig {
+  if (!config || typeof config !== 'object') {
+    throw new Error('Config must be an object');
+  }
 
-export type VerbiConfig = z.infer<typeof VerbiConfigSchema>;
-export type Locale = z.infer<typeof LocaleSchema>;
-export type GlossaryTerm = z.infer<typeof GlossaryTermSchema>;
+  if (!config.sourceLocale || typeof config.sourceLocale !== 'string') {
+    throw new Error('sourceLocale is required and must be a string');
+  }
+
+  if (!Array.isArray(config.locales) || config.locales.length === 0) {
+    throw new Error('locales must be a non-empty array');
+  }
+
+  if (!config.provider || typeof config.provider !== 'object') {
+    throw new Error('provider is required');
+  }
+
+  if (!config.provider.name || !['openai', 'anthropic'].includes(config.provider.name)) {
+    throw new Error('provider.name must be "openai" or "anthropic"');
+  }
+
+  // Return config with defaults
+  return {
+    sourceLocale: config.sourceLocale,
+    locales: config.locales,
+    messagesDir: config.messagesDir || './messages',
+    include: config.include || ['src/**/*.{ts,tsx,js,jsx}', 'app/**/*.{ts,tsx,js,jsx}', 'components/**/*.{ts,tsx,js,jsx}'],
+    exclude: config.exclude || ['**/*.test.*', '**/*.spec.*', '**/node_modules/**'],
+    provider: config.provider,
+    glossary: config.glossary || [],
+    cache: {
+      enabled: config.cache?.enabled !== false,
+      ttl: config.cache?.ttl || 30 * 24 * 60 * 60 * 1000, // 30 days
+      kind: config.cache?.kind || 'file',
+      path: config.cache?.path || '.verbi-cache',
+    },
+    validate: {
+      icu: config.validate?.icu !== false,
+      placeholders: config.validate?.placeholders !== false,
+      maxParaphraseDelta: config.validate?.maxParaphraseDelta || 0.15,
+      failOnMissing: config.validate?.failOnMissing || false,
+    },
+    namespaceStrategy: config.namespaceStrategy || 'directory',
+  };
+}

@@ -48,8 +48,7 @@ export async function initCommand() {
         message: 'Which AI provider do you want to use?',
         choices: [
           { title: 'OpenAI (GPT-4o-mini)', value: 'openai' },
-          { title: 'Anthropic (Claude)', value: 'anthropic' },
-          { title: 'DeepL', value: 'deepl' }
+          { title: 'Anthropic (Claude)', value: 'anthropic' }
         ],
         initial: 0
       },
@@ -140,12 +139,6 @@ function generateConfigTemplate(answers: any): string {
     apiKey: process.env.ANTHROPIC_API_KEY!,
     model: 'claude-3-5-sonnet-20241022',
   }`
-    },
-    deepl: {
-      import: 'deepl',
-      config: `{
-    apiKey: process.env.DEEPL_API_KEY!,
-  }`
     }
   };
 
@@ -181,23 +174,14 @@ function generateEnvTemplate(provider: string): string {
     openai: `# Verbi - OpenAI Configuration
 OPENAI_API_KEY=your_openai_api_key_here
 
-# Alternative providers (uncomment if needed):
+# Alternative provider (uncomment if needed):
 # ANTHROPIC_API_KEY=your_anthropic_api_key_here
-# DEEPL_API_KEY=your_deepl_api_key_here
 `,
     anthropic: `# Verbi - Anthropic Configuration
 ANTHROPIC_API_KEY=your_anthropic_api_key_here
 
-# Alternative providers (uncomment if needed):
+# Alternative provider (uncomment if needed):
 # OPENAI_API_KEY=your_openai_api_key_here
-# DEEPL_API_KEY=your_deepl_api_key_here
-`,
-    deepl: `# Verbi - DeepL Configuration
-DEEPL_API_KEY=your_deepl_api_key_here
-
-# Alternative providers (uncomment if needed):
-# OPENAI_API_KEY=your_openai_api_key_here
-# ANTHROPIC_API_KEY=your_anthropic_api_key_here
 `
   };
 

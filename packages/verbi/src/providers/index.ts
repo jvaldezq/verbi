@@ -13,9 +13,6 @@ export type { OpenAIConfig } from './openai.js';
 export { anthropic } from './anthropic.js';
 export type { AnthropicConfig } from './anthropic.js';
 
-export { deepl } from './deepl.js';
-export type { DeepLConfig } from './deepl.js';
-
 export { router } from './router.js';
 export type { RouterConfig, RouterRule } from './router.js';
 
