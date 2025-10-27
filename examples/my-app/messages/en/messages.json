@@ -1,0 +1,274 @@
+{
+  "Welcome to Verbi Example": {
+    "message": "Welcome to Verbi Example",
+    "location": {
+      "file": "app/[locale]/page.tsx",
+      "line": 22,
+      "column": 17
+    }
+  },
+  "AI-powered i18n for Next.js with zero runtime overhead": {
+    "message": "AI-powered i18n for Next.js with zero runtime overhead",
+    "location": {
+      "file": "app/[locale]/page.tsx",
+      "line": 26,
+      "column": 17
+    }
+  },
+  "Build-time translation powered by AI": {
+    "message": "Build-time translation powered by AI",
+    "location": {
+      "file": "app/[locale]/page.tsx",
+      "line": 30,
+      "column": 17
+    }
+  },
+  "Key Features": {
+    "message": "Key Features",
+    "location": {
+      "file": "app/[locale]/page.tsx",
+      "line": 41,
+      "column": 17
+    }
+  },
+  "AI Translation": {
+    "message": "AI Translation",
+    "location": {
+      "file": "app/[locale]/page.tsx",
+      "line": 49,
+      "column": 19
+    }
+  },
+  "Use OpenAI, Anthropic, or DeepL for high-quality translations": {
+    "message": "Use OpenAI, Anthropic, or DeepL for high-quality translations",
+    "location": {
+      "file": "app/[locale]/page.tsx",
+      "line": 52,
+      "column": 19
+    }
+  },
+  "Zero Runtime": {
+    "message": "Zero Runtime",
+    "location": {
+      "file": "app/[locale]/page.tsx",
+      "line": 59,
+      "column": 19
+    }
+  },
+  "All translations happen at build time with smart caching": {
+    "message": "All translations happen at build time with smart caching",
+    "location": {
+      "file": "app/[locale]/page.tsx",
+      "line": 62,
+      "column": 19
+    }
+  },
+  "Type Safe": {
+    "message": "Type Safe",
+    "location": {
+      "file": "app/[locale]/page.tsx",
+      "line": 69,
+      "column": 19
+    }
+  },
+  "Full TypeScript support with autocomplete and type checking": {
+    "message": "Full TypeScript support with autocomplete and type checking",
+    "location": {
+      "file": "app/[locale]/page.tsx",
+      "line": 72,
+      "column": 19
+    }
+  },
+  "Try It Out": {
+    "message": "Try It Out",
+    "location": {
+      "file": "app/[locale]/page.tsx",
+      "line": 84,
+      "column": 17
+    }
+  },
+  "Date & Time Formatting": {
+    "message": "Date & Time Formatting",
+    "location": {
+      "file": "app/[locale]/page.tsx",
+      "line": 106,
+      "column": 17
+    }
+  },
+  "Today is {date}": {
+    "message": "Today is {date}",
+    "location": {
+      "file": "app/[locale]/page.tsx",
+      "line": 109,
+      "column": 17
+    }
+  },
+  "Ready to Get Started?": {
+    "message": "Ready to Get Started?",
+    "location": {
+      "file": "app/[locale]/page.tsx",
+      "line": 119,
+      "column": 15
+    }
+  },
+  "Add Verbi to your Next.js project in minutes": {
+    "message": "Add Verbi to your Next.js project in minutes",
+    "location": {
+      "file": "app/[locale]/page.tsx",
+      "line": 122,
+      "column": 15
+    }
+  },
+  "View on GitHub": {
+    "message": "View on GitHub",
+    "location": {
+      "file": "app/[locale]/page.tsx",
+      "line": 129,
+      "column": 17
+    }
+  },
+  "Install from npm": {
+    "message": "Install from npm",
+    "location": {
+      "file": "app/[locale]/page.tsx",
+      "line": 135,
+      "column": 17
+    }
+  },
+  "Pluralization Demo": {
+    "message": "Pluralization Demo",
+    "location": {
+      "file": "components/Counter.tsx",
+      "line": 14,
+      "column": 8
+    }
+  },
+  "Decrease": {
+    "message": "Decrease",
+    "location": {
+      "file": "components/Counter.tsx",
+      "line": 22,
+      "column": 11
+    }
+  },
+  "Increase": {
+    "message": "Increase",
+    "location": {
+      "file": "components/Counter.tsx",
+      "line": 33,
+      "column": 11
+    }
+  },
+  "{count, plural, =0 {No items} one {# item} other {# items}}": {
+    "message": "{count, plural, =0 {No items} one {# item} other {# items}}",
+    "location": {
+      "file": "components/Counter.tsx",
+      "line": 51,
+      "column": 11
+    }
+  },
+  "Try clicking the buttons to see how pluralization works": {
+    "message": "Try clicking the buttons to see how pluralization works",
+    "location": {
+      "file": "components/Counter.tsx",
+      "line": 67,
+      "column": 11
+    }
+  },
+  "Client-Side Translation": {
+    "message": "Client-Side Translation",
+    "location": {
+      "file": "components/ExampleClientComponent.tsx",
+      "line": 13,
+      "column": 8
+    }
+  },
+  "Enter your name": {
+    "message": "Enter your name",
+    "location": {
+      "file": "components/ExampleClientComponent.tsx",
+      "line": 19,
+      "column": 12
+    }
+  },
+  "Type your name...": {
+    "message": "Type your name...",
+    "location": {
+      "file": "components/ExampleClientComponent.tsx",
+      "line": 27,
+      "column": 25
+    }
+  },
+  "Hello, {name}! Welcome to Verbi.": {
+    "message": "Hello, {name}! Welcome to Verbi.",
+    "location": {
+      "file": "components/ExampleClientComponent.tsx",
+      "line": 35,
+      "column": 15
+    }
+  },
+  "This component uses client-side hooks for dynamic content": {
+    "message": "This component uses client-side hooks for dynamic content",
+    "location": {
+      "file": "components/ExampleClientComponent.tsx",
+      "line": 42,
+      "column": 12
+    }
+  },
+  "Select & Gender Demo": {
+    "message": "Select & Gender Demo",
+    "location": {
+      "file": "components/SelectExample.tsx",
+      "line": 16,
+      "column": 8
+    }
+  },
+  "Select a gender": {
+    "message": "Select a gender",
+    "location": {
+      "file": "components/SelectExample.tsx",
+      "line": 22,
+      "column": 10
+    }
+  },
+  "Male": {
+    "message": "Male",
+    "location": {
+      "file": "components/SelectExample.tsx",
+      "line": 33,
+      "column": 13
+    }
+  },
+  "Female": {
+    "message": "Female",
+    "location": {
+      "file": "components/SelectExample.tsx",
+      "line": 43,
+      "column": 13
+    }
+  },
+  "Neutral": {
+    "message": "Neutral",
+    "location": {
+      "file": "components/SelectExample.tsx",
+      "line": 53,
+      "column": 13
+    }
+  },
+  "Select user type": {
+    "message": "Select user type",
+    "location": {
+      "file": "components/SelectExample.tsx",
+      "line": 71,
+      "column": 10
+    }
+  },
+  "Combined Example": {
+    "message": "Combined Example",
+    "location": {
+      "file": "components/SelectExample.tsx",
+      "line": 97,
+      "column": 10
+    }
+  }
+}

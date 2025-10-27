@@ -1,0 +1,115 @@
+{
+  "name": "verbi",
+  "version": "0.1.0",
+  "description": "AI-powered i18n for Next.js",
+  "author": "Your Name",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/verbi"
+  },
+  "keywords": [
+    "i18n",
+    "internationalization",
+    "nextjs",
+    "ai",
+    "translation",
+    "localization",
+    "react",
+    "typescript"
+  ],
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./runtime": {
+      "types": "./dist/runtime.d.ts",
+      "import": "./dist/runtime.js",
+      "require": "./dist/runtime.cjs"
+    },
+    "./next": {
+      "types": "./dist/next.d.ts",
+      "import": "./dist/next.js",
+      "require": "./dist/next.cjs"
+    },
+    "./next/server": {
+      "types": "./dist/next.server.d.ts",
+      "import": "./dist/next.server.js",
+      "require": "./dist/next.server.cjs"
+    },
+    "./config": {
+      "types": "./dist/config.d.ts",
+      "import": "./dist/config.js",
+      "require": "./dist/config.cjs"
+    },
+    "./providers": {
+      "types": "./dist/providers.d.ts",
+      "import": "./dist/providers.js",
+      "require": "./dist/providers.cjs"
+    }
+  },
+  "bin": {
+    "verbi": "./bin/verbi.cjs"
+  },
+  "files": [
+    "dist",
+    "bin",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "eslint src",
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf dist .turbo"
+  },
+  "peerDependencies": {
+    "next": "^14.0.0",
+    "react": "^18.0.0"
+  },
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": true
+    },
+    "next": {
+      "optional": true
+    }
+  },
+  "dependencies": {
+    "@babel/parser": "^7.23.0",
+    "@babel/traverse": "^7.23.0",
+    "@babel/types": "^7.23.0",
+    "@formatjs/icu-messageformat-parser": "^2.7.0",
+    "@types/prompts": "^2.4.9",
+    "commander": "^11.1.0",
+    "dotenv": "^17.2.3",
+    "fast-diff": "^1.3.0",
+    "fast-glob": "^3.3.2",
+    "picocolors": "^1.0.0",
+    "prompts": "^2.4.2",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "@types/babel__traverse": "^7.20.4",
+    "@types/node": "^20.10.0",
+    "@types/react": "^18.2.0",
+    "@typescript-eslint/eslint-plugin": "^6.14.0",
+    "@typescript-eslint/parser": "^6.14.0",
+    "eslint": "^8.55.0",
+    "next": "^14.0.0",
+    "react": "^18.2.0",
+    "tsup": "^8.0.0",
+    "typescript": "^5.3.0",
+    "vitest": "^1.0.0"
+  },
+  "optionalDependencies": {
+    "@anthropic-ai/sdk": "^0.9.0",
+    "deepl-node": "^1.11.0",
+    "openai": "^4.20.0"
+  }
+}

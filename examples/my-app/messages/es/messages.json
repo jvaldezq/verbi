@@ -1,0 +1,104 @@
+{
+  "Pluralization Demo": {
+    "message": "Demostración de Pluralización"
+  },
+  "Decrease": {
+    "message": "Disminuir"
+  },
+  "Increase": {
+    "message": "Aumentar"
+  },
+  "Try clicking the buttons to see how pluralization works": {
+    "message": "Intenta hacer clic en los botones para ver cómo funciona la pluralización"
+  },
+  "Client-Side Translation": {
+    "message": "Traducción del Lado del Cliente"
+  },
+  "Enter your name": {
+    "message": "Ingresa tu nombre"
+  },
+  "Type your name...": {
+    "message": "Escribe tu nombre..."
+  },
+  "This component uses client-side hooks for dynamic content": {
+    "message": "Este componente utiliza hooks del lado del cliente para contenido dinámico"
+  },
+  "Select & Gender Demo": {
+    "message": "Demostración de Selección y Género"
+  },
+  "Select a gender": {
+    "message": "Selecciona un género"
+  },
+  "Male": {
+    "message": "Masculino"
+  },
+  "Female": {
+    "message": "Femenino"
+  },
+  "Neutral": {
+    "message": "Neutral"
+  },
+  "Select user type": {
+    "message": "Selecciona el tipo de usuario"
+  },
+  "Combined Example": {
+    "message": "Ejemplo Combinado"
+  },
+  "Welcome to Verbi Example": {
+    "message": "Bienvenido a Verbi Example"
+  },
+  "AI-powered i18n for Next.js with zero runtime overhead": {
+    "message": "i18n impulsado por IA para Next.js sin sobrecarga en tiempo de ejecución"
+  },
+  "Build-time translation powered by AI": {
+    "message": "Traducción en tiempo de construcción impulsada por IA"
+  },
+  "Key Features": {
+    "message": "Características Clave"
+  },
+  "AI Translation": {
+    "message": "Traducción por IA"
+  },
+  "Use OpenAI, Anthropic, or DeepL for high-quality translations": {
+    "message": "Utiliza OpenAI, Anthropic o DeepL para traducciones de alta calidad"
+  },
+  "Zero Runtime": {
+    "message": "Sin Tiempo de Ejecución"
+  },
+  "All translations happen at build time with smart caching": {
+    "message": "Todas las traducciones ocurren en tiempo de construcción con almacenamiento en caché inteligente"
+  },
+  "Type Safe": {
+    "message": "Seguro de Tipos"
+  },
+  "Full TypeScript support with autocomplete and type checking": {
+    "message": "Soporte completo de TypeScript con autocompletado y verificación de tipos"
+  },
+  "Try It Out": {
+    "message": "Pruébalo"
+  },
+  "Date & Time Formatting": {
+    "message": "Formato de Fecha y Hora"
+  },
+  "Today is {date}": {
+    "message": "Hoy es {date}"
+  },
+  "Ready to Get Started?": {
+    "message": "¿Listo para empezar?"
+  },
+  "Add Verbi to your Next.js project in minutes": {
+    "message": "Agrega Verbi a tu proyecto de Next.js en minutos"
+  },
+  "View on GitHub": {
+    "message": "Ver en GitHub"
+  },
+  "Install from npm": {
+    "message": "Instalar desde npm"
+  },
+  "{count, plural, =0 {No items} one {# item} other {# items}}": {
+    "message": "{count, plural, =0 {No items} one {# item} other {# items}}"
+  },
+  "Hello, {name}! Welcome to Verbi.": {
+    "message": "Hola, {name}! Bienvenido a Verbi."
+  }
+}
